@@ -1,17 +1,19 @@
 'use strict';
 module.exports = function(app) {
-    let productsCtrl = require('./controllers/ProductsController');
-    let userCtrl = require('./controllers/UsersController');
+    //let productsCtrl = require('./controllers/ProductsController');
+    let userCtrl = require('./database');
     // list route to do
-    app.route('/products')
-        .get(productsCtrl.get)
-        .post(productsCtrl.store);
+    // app.route('/products')
+    //     .get(productsCtrl.get)
+    //     .post(productsCtrl.store);
 
-    app.route('/products/:productId')
-        .get(productsCtrl.detail)
-        .put(productsCtrl.update)
-        .delete(productsCtrl.delete);
+    // app.route('/products/:productId')
+    //     .get(productsCtrl.detail)
+    //     .put(productsCtrl.update)
+    //     .delete(productsCtrl.delete);
     
+    app.route('/users/all')
+        .get(userCtrl.getalluser)
     app.route('/users')
         .get(userCtrl.get)
         .post(userCtrl.store)
