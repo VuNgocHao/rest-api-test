@@ -1,10 +1,11 @@
 let express =  require('express')
 let app = express()
 const bodyParser = require('body-parser')
+const cors = require('cors')
 require('dotenv').config() 
 const PORT = process.env.PORT  || 3000;//set port api is 3000
 
-
+app.use(cors())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 
